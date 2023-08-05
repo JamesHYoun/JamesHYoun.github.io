@@ -1,94 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <nav>
-        <h3>Table of Contents</h3>
-        <ul>
-            <li><a href="#bio">BIO</a></li>
-            <li><a href="#about-me">ABOUT ME</a></li>
-            <li><a href="#education">EDUCATION</a></li>
-            <li><a href="#skills">SKILLS</a></li>
-            <li><a href="#projects">PROJECTS</a></li>
-            <li><a href="#awards">AWARDS</a></li>
-            <li><a href="#certifications">CERTIFICATIONS</a></li>
-            <li><a href="#languages">LANGUAGES</a></li>
-        </ul>
-    </nav>
+    <div class="grid-container">
+        <div class="navigation">
+            <nav>
+                <h3>Table of Contents</h3>
+                <ul>
+                    <li><a href="#bio">BIO</a></li>
+                    <li><a href="#about-me">ABOUT ME</a></li>
+                    <li><a href="#education">EDUCATION</a></li>
+                    <li><a href="#skills">SKILLS</a></li>
+                    <li><a href="#projects">PROJECTS</a></li>
+                    <li><a href="#awards">AWARDS</a></li>
+                    <li><a href="#certifications">CERTIFICATIONS</a></li>
+                    <li><a href="#languages">LANGUAGES</a></li>
+                </ul>
+            </nav>
+        </div>
 
-    <h1 id="bio">James Youn</h1>
-    <p>Location: Cupertino, CA</p>
-    <p>Email: james.hc.youn@gmail.com</p>
-    <p>Phone: 650-660-8140</p> 
-    <p>Linkedin: https://www.linkedin.com/in/james-youn/</p>
-    <p>Github: https://github.com/JamesHYoun</p>
-    <br>
+        <div class="content">
+            <h1 id="bio">James Youn</h1>
+            <p>Location: Cupertino, CA</p>
+            <p>Email: james.hc.youn@gmail.com</p>
+            <p>Phone: 650-660-8140</p>
+            <p>Linkedin: https://www.linkedin.com/in/james-youn/</p>
+            <p>Github: https://github.com/JamesHYoun</p>
+            <br>
 
-    <h1 id="about-me">About Me</h1>
-    <p>Description</p>
-    <br>
+            <h1 id="about-me">About Me</h1>
+            <p>Description</p>
+            <br>
 
-    <h1 id="education">Education</h1>
-    <h2>UCLA Bachelor of Science</h2>
-    <p>September 2019 - August 2023</p>
-    <h3>Computer Science Major</h3>
-    <p>Artificial Intelligence, Machine Learning, Networking</p>
-    <h3>Mathematics Minor</h3>
-    <p>Optimization, Discrete Math, Multivariable Calculus</p>
-    <h3>Bioinformatics Minor</h3>
-    <p>Bioinformatics Algorithms, ML in Genetics</p>
-    <h2>UCLA Masters</h2>
-    <p>September 2023 - ?</p>
-    <br>
+            <h1 id="education">Education</h1>
+            <h2>UCLA Bachelor of Science</h2>
+            <p>September 2019 - August 2023</p>
+            <h3>Computer Science Major</h3>
+            <p>Artificial Intelligence, Machine Learning, Networking</p>
+            <h3>Mathematics Minor</h3>
+            <p>Optimization, Discrete Math, Multivariable Calculus</p>
+            <h3>Bioinformatics Minor</h3>
+            <p>Bioinformatics Algorithms, ML in Genetics</p>
+            <h2>UCLA Masters</h2>
+            <p>September 2023 - ?</p>
+            <br>
 
-    <h1 id="skills">Skills</h1>
-    <h3>Programming Languages</h3>
-    <h4>Proficient</h4>
-    <p>Python, C/C++, Java</p>
-    <h4>Familiar</h4>
-    <p>HTML, Javascript/Typescript, CSS, Prolog, Lisp/Scheme, Ocaml</p>
-    <h3>Tools & Frameworks</h3>
-    <h4>Familiar</h4>
-    <p>Flask, Jinja, tkinter, Matlab, Angular JS, NodeJS, React.js, MongoDB, PyTorch, Tensorflow, Emacs</p>
-    <br>
+            <h1 id="skills">Skills</h1>
+            <h3>Programming Languages</h3>
+            <h4>Proficient</h4>
+            <p>Python, C/C++, Java</p>
+            <h4>Familiar</h4>
+            <p>HTML, Javascript/Typescript, CSS, Prolog, Lisp/Scheme, Ocaml</p>
+            <h3>Tools & Frameworks</h3>
+            <h4>Familiar</h4>
+            <p>Flask, Jinja, tkinter, Matlab, Angular JS, NodeJS, React.js, MongoDB, PyTorch, Tensorflow, Emacs</p>
+            <br>
 
-    <h1 id="projects">Projects</h1>
-    <h3>Protocol and Server</h3>
-    <p>May 2022 - June 2022</p>
-    <p>Implemented a reliable data transfer protocol for UDP with Selective Repeat and pipelining using HTTP and C/C++. Successfully transmitted 10MB files split into 524 byte packets and supported multiple clients.</p>
-    <h3>SAT solver (3rd place out of 150)</h3>
-    <p>May 2022</p>
-    <p>Implemented an informed search algorithm in Lisp that utilizes forward checking and variable reordering to solve the SAT problem. Finds a valid assignment for any propositional sentence in Conjunctive Normal Form.</p>
-    <h3>Genome Hasher & Assembler</h3>
-    <p>April 2021</p>
-    <p>Engineered software that aligns DNA reads to a reference genome and locates SNPs and Indels from this alignment with an F-score = 85%. Programmed software that solely uses reads to assemble the reference genome bottom-up with a coverage > 76%.</p>
-    <br>
+            <h1 id="projects">Projects</h1>
+            <h3>Protocol and Server</h3>
+            <p>May 2022 - June 2022</p>
+            <p>Implemented a reliable data transfer protocol for UDP with Selective Repeat and pipelining using HTTP and
+                C/C++.
+                Successfully transmitted 10MB files split into 524 byte packets and supported multiple clients.</p>
+            <h3>SAT solver (3rd place out of 150)</h3>
+            <p>May 2022</p>
+            <p>Implemented an informed search algorithm in Lisp that utilizes forward checking and variable reordering
+                to
+                solve
+                the SAT problem. Finds a valid assignment for any propositional sentence in Conjunctive Normal Form.</p>
+            <h3>Genome Hasher & Assembler</h3>
+            <p>April 2021</p>
+            <p>Engineered software that aligns DNA reads to a reference genome and locates SNPs and Indels from this
+                alignment
+                with an F-score = 85%. Programmed software that solely uses reads to assemble the reference genome
+                bottom-up
+                with a coverage > 76%.</p>
+            <br>
 
-    <h1 id="awards">Awards</h1>
-    <h3>Gold Division - USA Computing Olympiad</h3>
-    <br>
+            <h1 id="awards">Awards</h1>
+            <h3>Gold Division - USA Computing Olympiad</h3>
+            <br>
 
-    <h1 id="certifications">Certifications</h1>
-    <h3>Machine Learning</h3>
-    <p>Stanford</p>
-    <p>linear & logistic regression, SVM, Kernels, Spam classification</p>
-    <h3>Neural Networks and Deep Learning</h3>
-    <p>DeepLearning.AI</p>
-    <p>gradient descent, backpropagation, exploding & vanishing gradients</p>
-    <h3>Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization</h3>
-    <p>DeepLearning.AI</p>
-    <p>Description</p>
-    <br>
+            <h1 id="certifications">Certifications</h1>
+            <h3>Machine Learning</h3>
+            <p>Stanford</p>
+            <p>linear & logistic regression, SVM, Kernels, Spam classification</p>
+            <h3>Neural Networks and Deep Learning</h3>
+            <p>DeepLearning.AI</p>
+            <p>gradient descent, backpropagation, exploding & vanishing gradients</p>
+            <h3>Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization</h3>
+            <p>DeepLearning.AI</p>
+            <p>Description</p>
+            <br>
 
-    <h1 id="languages">Languages</h1>
-    <p>English</p>
-    <p>Native</p>
-    <p>Korean</p>
-    <p>Full</p>
-    <p>Spanish</p>
-    <p>Limited</p>
-    <br>
+            <h1 id="languages">Languages</h1>
+            <p>English</p>
+            <p>Native</p>
+            <p>Korean</p>
+            <p>Full</p>
+            <p>Spanish</p>
+            <p>Limited</p>
+            <br>
+        </div>
+    </div>
 </body>
+
 </html>
