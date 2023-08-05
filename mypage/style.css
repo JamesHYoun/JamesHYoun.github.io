@@ -1,13 +1,21 @@
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 7fr;
+    grid-template-columns: 1.5fr 6fr 1fr;
     /*grid-gap: 20px;*/
 }
 
-/* .navigation {
-    padding: 20px;
+.basic-info-container {
+    position: fixed;
 }
 
-.content {
+nav {
+    position: fixed;
+}
+
+/* .content {
     padding: 20px;
 } */
+
+img {
+    width: 60%;
+}
