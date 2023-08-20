@@ -1,7 +1,53 @@
+body {
+    color: #39FF14;
+    background-color: rgb(50, 50, 50);
+    font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Calibri, sans-serif;
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: 1.5fr 6fr 1fr;
     /*grid-gap: 20px;*/
+}
+
+#college-degree {
+    color: rgb(255, 255, 0);
+    font-size: 40px;
+}
+
+.container-0 {
+    margin-bottom: 75px;
+}
+
+.container-1 {
+    margin-left: 50px;
+}
+
+.container-2 {
+    margin-left: 40px;
+}
+
+.heading {
+    color: rgb(148, 0, 211);
+    font-size: 45px;
+    /* color: rgb(255, 255, 0); */
+}
+
+.date {
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    margin-top: -20px;
+    margin-bottom: -10px;
+}
+
+.content {
+    color: rgb(220, 220, 220);
+    font-size: 25px;
+}
+
+.name {
+    color: rgb(2, 116, 215);
+    font-size: 31px;
 }
 
 .basic-info-container {
