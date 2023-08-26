@@ -1,66 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* scroll-behavior: smooth; */
+}
+
 body {
-    color: #39FF14;
     background-color: rgb(50, 50, 50);
     font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Calibri, sans-serif;
+    padding: 30px;
 }
 
 .grid-container {
     display: grid;
-    grid-template-columns: 1.5fr 6fr 1fr;
-    /*grid-gap: 20px;*/
+    /* grid-template-columns: 1.5fr 6fr 1fr; */
+    grid-template-columns: 1.5fr 7fr;
 }
 
-#college-degree {
-    color: rgb(255, 255, 0);
-    font-size: 40px;
+.basic-info-container {
+    /* display: grid; */
+    /* place-items: center; */
+    /* align-items: center; */
+    /* text-align: center; */
+    color: rgb(255, 255, 255);
 }
 
-.container-0 {
-    margin-bottom: 75px;
+#name {
+    color: rgb(2, 116, 215);
 }
 
-.container-1 {
-    margin-left: 50px;
+#location {
+    /* color: rgb(255, 255, 255); */
 }
 
-.container-2 {
-    margin-left: 40px;
+#email {
+    /* color: rgb(255, 255, 255); */
 }
 
-.heading {
-    color: rgb(148, 0, 211);
+#phone {
+    /* color: rgb(255, 255, 255); */
+}
+
+#linkedin {
+    /* color: rgb(255, 255, 255); */
+}
+
+#github {
+    /* color: rgb(255, 255, 255); */
+}
+
+.section {
+    margin-bottom: 40px;
+
+    /* box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2); */
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+
+    border-radius: 20px;
+    border: rgb(100, 100, 100) solid 5px;
+
+    display: flex;
+    flex-direction: column;
+
+    
+}
+
+.section-head {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+    border-bottom: rgb(75, 75, 75) solid 4px;
+
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    padding-right: 20px;
+    
+    /* background: linear-gradient(red, blue); */
+    background: linear-gradient(135deg, rgba(40, 40, 40, 1), rgba(48, 48, 48, 1));
+    /* background-color: rgba(0, 0, 0, 1); */
+    /* color: rgb(148, 0, 211); */
+    color: rgb(136, 2, 194);
+    /* color: rgb(125, 1, 177); */
+
     font-size: 45px;
-    /* color: rgb(255, 255, 0); */
 }
 
-.date {
+.section-body {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+    padding-top: 25px;
+    padding-left: 60px;
+    padding-bottom: 25px;
+    padding-right: 60px;
+
+    background: linear-gradient(135deg, rgba(52, 52, 52, 1), rgba(58, 58, 58, 1));
+    /* background-color: rgb(55, 55, 55); */
+}
+
+.item {
+    margin-bottom: 20px;
+}
+
+.item-head {
+    /* color: rgb(2, 116, 215); */
+    color: rgb(1, 126, 235);
+    font-size: 31px;
+}
+
+.item-body {
+    padding-top: 4px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.skill-component {
+    margin-bottom: 10px;
+}
+
+.item-subtext {
+    margin-bottom: 7px;
+
     color: rgb(255, 255, 255);
     font-size: 20px;
-    margin-top: -20px;
-    margin-bottom: -10px;
 }
 
-.content {
+.item-subtext .skill-level {
+    margin-bottom: -5px;
+}
+
+.lang-level {
+    margin-top: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: -5px;
+}
+
+.item-description {
+    margin-top: 5px;
     color: rgb(220, 220, 220);
     font-size: 25px;
 }
 
-.name {
-    color: rgb(2, 116, 215);
-    font-size: 31px;
+.college-degree {
+    color: rgb(255, 255, 0);
+    font-size: 40px;
 }
 
-.basic-info-container {
-    position: fixed;
+#ms-date {
+    margin-bottom: 20px;
 }
+
+
+/* .basic-info-container {
+    position: fixed;
+} */
 
 nav {
     position: fixed;
 }
 
-/* .content {
-    padding: 20px;
-} */
+nav h3 {
+    color: rgb(136, 2, 194);
+    font-size: 25px;
+    font-weight: bold;
+}
+
+nav ul {
+    padding-top: 5px;
+    padding-left: 30px;
+}
+
+nav li {
+    color: rgba(40, 40, 40, 1);
+    padding-bottom: 2px;
+}
+
+nav a {
+    color: rgba(1, 126, 235, 0.7);
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    /* text-decoration: underline; */
+    color: rgba(1, 126, 235, 1);
+}
 
 img {
     width: 60%;
