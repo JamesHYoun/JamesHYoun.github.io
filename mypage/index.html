@@ -3,297 +3,368 @@
 
 <head>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="script.js" defer></script>
 </head>
+<!-- 
+<script>
+    const elements = document.querySelectorAll('.AI');
+    console.log(elements);
+</script> -->
 
 <body>
     <div class="grid-container">
-        <div class="navigation">
-            <nav>
-                <h3>Table of Contents</h3>
-                <ul>
-                    <li><a href="#about-me">ABOUT ME</a></li>
-                    <li><a href="#education">EDUCATION</a></li>
-                    <li><a href="#skills">SKILLS</a></li>
-                    <li><a href="#projects">PROJECTS</a></li>
-                    <li><a href="#awards">AWARDS</a></li>
-                    <li><a href="#certifications">CERTIFICATIONS</a></li>
-                    <li><a href="#languages">LANGUAGES</a></li>
-                </ul>
-            </nav>
+        <div id="column-1">
+            <div id="column1-container">
+                <div id="filter-menu">
+                    <h3>Filter Menu <span><button id="All-button" onclick="toggleButton('All')">All</button></span></h3>
+                    <div id="filters">
+                        <!-- <input type="button" id="CS-button" value="CS" onclick="toggleButton('CS')">
+                        <input type="button" id="AI-button" value="AI" onclick="toggleButton('AI')">
+                        <input type="button" id="Web-button" value="Web" onclick="toggleButton('Web')">
+                        <input type="button" id="GUI-button" value="GUI" onclick="toggleButton('GUI')"> -->
+                        <button id="CS-button" onclick="toggleButton('CS')">CS</button>
+                        <button id="AI-button" onclick="toggleButton('AI')">AI</button>
+                        <button id="Web-button" onclick="toggleButton('Web')">Web</button>
+                        <button id="GUI-button" onclick="toggleButton('GUI')">GUI</button>
+                    </div>
+                </div>
+                <nav>
+                    <h3>Table of Contents</h3>
+                    <ul>
+                        <li><a href="#bio">BIO</a></li>
+                        <li><a href="#education">EDUCATION</a></li>
+                        <li><a href="#skills">SKILLS</a></li>
+                        <li><a href="#projects">PROJECTS</a></li>
+                        <li><a href="#awards">AWARDS</a></li>
+                        <li><a href="#certifications">CERTIFICATIONS</a></li>
+                        <li><a href="#languages">LANGUAGES</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
 
-        <div class="content">
-            <!-- <div class="basic-info">
-                <div class="basic-info-container">
-                    <img src="../../../Career/James_Linkedin.JPG">
-                    <p>**Image of Me**</p>
-                    <h1 id="name">James Youn</h1>
-                    <p id="location">Cupertino, CA</p>
-                    <p id="email">james.hc.youn@gmail.com</p>
-                    <p id="phone">650-660-8140</p>
-                    <p id="linkedin"><a href="https://www.linkedin.com/in/james-youn/" target="_blank">Linkedin</a></p>
-                    <p id="github"><a href="https://github.com/JamesHYoun" target="_blank">GitHub</a></p>
-                </div>
-            </div> -->
-
-            <div class="section">
-                <h1 class="section-head" id="about-me">About Me</h1>
-                <div class="section-body">
-                    <div class="item">
-                        <p class="item-description">Description</p>
+        <div id="column-2">
+            <div id="bio">
+                <img id="photo" src="../../../Career/James_Linkedin.JPG">
+                <h1 id="name">James Youn</h1>
+                <div id="personal-info">
+                    <!-- <span>
+                    <div class="location-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="#FF5733"
+                                d="M12 2C7.264 2 4 5.524 4 10c0 2.552.978 5.053 2.732 7.049a2.52 2.52 0 0 0 1.819.834c.732 0 1.447-.293 1.973-.82L12 19.833l1.476-1.927a2.518 2.518 0 0 0 1.973.82 2.52 2.52 0 0 0 1.819-.834C19.022 15.053 20 12.552 20 10c0-4.476-3.264-8-8-8zm0 12a2 2 0 1 1 0-4 2 2 0 0 1 0 4z" />
+                        </svg>
                     </div>
+                    </span> -->
+                    <strong id="location">Cupertino, CA</strong>
+
+                    <strong id="email">james.hc.youn@gmail.com</strong>
+                    <strong id="phone">650-660-8140</strong>
                 </div>
+                <div id="links">
+                    <a id="linkedin" href="https://www.linkedin.com/in/james-youn/" target="_blank">
+                        <i class="fab fa-linkedin fa-2x"></i>
+                    </a>
+                    <a id="github" href="https://github.com/JamesHYoun" target="_blank">
+                        <i class="fab fa-github fa-2x"></i>
+                    </a>
+                </div>
+                <p id="description" class="item-description">I am currently a Computer Science student at UCLA with two minors in Math and Bioinformatics. I am very curious about the simple rules that give birth to complex intelligence and hope to one day do Research & Development in an AI field. As a very hardworking and open-minded individual, I am eager to learn and grow from every experience and constructive feedback I can get.</p>
+                <!-- <p id="description" class="item-description">DAM</p> -->
             </div>
-
-            <div class="section">
-                <h1 class="section-head" id="education">Education</h1>
-                <div class="section-body">
-                    <div class="item">
-                        <div class="item-head">
-                            <h2 class="college-degree">UCLA Bachelor of Science</h2>
-                        </div>
-                        <div class="item-body">
-                            <p class="item-subtext">September 2019 - August 2023</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <h3 class="item-head">Computer Science Major</h3>
-                        <div class="item-body">
-                            <p class="item-description">Artificial Intelligence, Machine Learning, Networking</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <h3 class="item-head">Mathematics Minor</h3>
-                        <div class="item-body">
-                            <p class="item-description">Optimization, Discrete Math, Multivariable Calculus</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <h3 class="item-head">Bioinformatics Minor</h3>
-                        <div class="item-body">
-                            <p class="item-description">Bioinformatics Algorithms, ML in Genetics</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-head">
-                            <h2 class="college-degree">UCLA Masters</h2>
-                        </div>
-                        <div class="item-body">
-                            <p class="item-subtext" id="ms-date">September 2023 - ?</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <h1 class="section-head" id="skills">Skills</h1>
-                <div class="section-body">
-                    <div class="item">
-                        <h3 class="item-head">Programming Languages</h3>
-                        <div class="item-body">
-                            <div class="skill-component">
-                                <div class="item-subtext">
-                                    <h4 class="skill-level">Proficient</h4>
-                                </div>
-                                <p class="item-description">Python, C/C++, Java</p>
+            <div id="content">
+                <div class="section" id="education">
+                    <h1 class="section-head">Education</h1>
+                    <div class="section-body">
+                        <div class="item">
+                            <div class="item-head">
+                                <h2 class="college-degree">UCLA Bachelor of Science</h2>
                             </div>
-                            <div class="skill-component">
-                                <div class="item-subtext">
-                                    <h4 class="skill-level">Familiar</h4>
-                                </div>
-                                <p class="item-description">HTML, Javascript/Typescript, CSS, Prolog, Lisp/Scheme, Ocaml
+                            <div class="item-body">
+                                <p class="item-subtext">September 2019 - August 2023</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <h3 class="item-head">Computer Science Major</h3>
+                            <div class="item-body">
+                                <p class="item-description">
+                                    <span class="CS">Logic Design & Digital Systems . </span>
+                                    <span class="CS">Algorithms & Complexity . </span>
+                                    <span class="CS">Computer Organization . </span>
+                                    <span class="CS">Systems and Signals . </span>
+                                    <span class="CS">Software Construction . </span>
+                                    <span class="CS">Electrical & Electronic Circuits . </span>
+                                    <span class="CS">Computer Systems Architecture . </span>
+                                    <span class="CS">Oscillations & Waves & Fields . </span>
+                                    <span class="CS">Operating Systems Principles . </span>
+                                    <span class="CS">Programming Languages . </span>
+                                    <span class="CS AI">Machine Learning . </span>
+                                    <span class="CS AI">Linguistic Analysis . </span>
+                                    <span class="CS">Electrodynamics & Optics & Special Relativity . </span>
+                                    <span class="CS Web">Computer Network Fundamentals . </span>
+                                    <span class="CS AI">Artificial Intelligence . </span>
+                                    <span class="CS">Digital Design Laboratory . </span>
+                                    <span class="CS">Electricity & Magnetism Laboratory . </span>
+                                    <span class="CS">Formal Languages & Automata Theory . </span>
+                                    <span class="CS">Software Engineering . </span>
+                                    <span class="CS AI Web">Data Management Systems . </span>
+                                    <span class="CS AI">Neural Networks & Deep Learning . </span>
+                                    <span class="CS Web">Computer Security . </span>
+                                    <span class="CS AI">Data Mining . </span>
+                                    <span class="CS GUI">Computer Graphics . </span>
                                 </p>
                             </div>
                         </div>
-                    </div>
-                    <div class="item">
-                        <h3 class="item-head">Tools & Frameworks</h3>
-                        <div class="item-body">
-                            <div class="skill-component">
-                                <div class="item-subtext">
-                                    <h4 class="skill-level">Familiar</h4>
-                                </div>
-                                <p class="item-description">Flask, Jinja, tkinter, Matlab, Angular JS, NodeJS, React.js,
-                                    MongoDB, PyTorch,
-                                    Tensorflow,
-                                    Emacs
+                        <div class="item">
+                            <h3 class="item-head">Mathematics Minor</h3>
+                            <div class="item-body">
+                                <p class="item-description">
+                                    <span class="CS AI">Linear Algebra . </span>
+                                    <span class="CS">Discrete Structures . </span>
+                                    <span>Differential Equations . </span>
+                                    <span>Real Analysis . </span>
+                                    <span class="AI">Probability Theory . </span>
+                                    <span class="CS">Applied Numerical Methods . </span>
+                                    <span class="AI">Optimization . </span>
+                                    <span>Abstract Algebra . </span>
                                 </p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <h3 class="item-head">Bioinformatics Minor</h3>
+                            <div class="item-body">
+                                <p class="item-description">
+                                    <span>Intro to Bioinformatics . </span>
+                                    <span class="AI">Applied Neuroscience . </span>
+                                    <span>Cell & Molecular Biology . </span>
+                                    <span class="CS">Computational & Systems Biology . </span>
+                                    <span class="CS">Algorithms in Bioinformatics . </span>
+                                    <span class="CS AI">Machine Learning in Genetics . </span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item-head">
+                                <h2 class="college-degree">UCLA Masters</h2>
+                            </div>
+                            <div class="item-body">
+                                <p class="item-subtext" id="ms-date">September 2023 - ?</p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="section">
-                <h1 class="section-head" id="projects">Projects</h1>
-                <div class="section-body">
-                    <div class="item">
-                        <h3 class="item-head">Protocol and Server</h3>
-                        <div class="item-body">
-                            <p class="item-subtext">May 2022 - June 2022</p>
-                            <p class="item-description">Implemented a reliable data transfer protocol for UDP with
-                                Selective
-                                Repeat
-                                and
-                                pipelining using HTTP and
-                                C/C++.
-                                Successfully transmitted 10MB files split into 524 byte packets and supported multiple
-                                clients.
-                            </p>
+                <div class="section" id="skills">
+                    <h1 class="section-head">Skills</h1>
+                    <div class="section-body">
+                        <div class="item">
+                            <h3 class="item-head">Programming Languages</h3>
+                            <div class="item-body">
+                                <div class="skill-component">
+                                    <div class="item-subtext">
+                                        <h4 class="skill-level">Proficient</h4>
+                                    </div>
+                                    <p class="item-description">
+                                        <span class="CS AI">Python . </span>
+                                        <span class="CS">C/C++ . </span>
+                                        <span class="CS">Java . </span>
+                                    </p>
+                                </div>
+                                <div class="skill-component">
+                                    <div class="item-subtext">
+                                        <h4 class="skill-level">Familiar</h4>
+                                    </div>
+                                    <p class="item-description">
+                                        <span class="CS Web">HTML . </span>
+                                        <span class="CS Web">Javascript/Typescript . </span>
+                                        <span class="CS Web">CSS . </span>
+                                        <span class="CS AI">Prolog . </span>
+                                        <span class="CS AI">Lisp/Scheme . </span>
+                                        <span class="CS">Ocaml . </span>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="item">
-                        <h3 class="item-head">Protocol and Server</h3>
-                        <div class="item-body">
-                            <p class="item-subtext">May 2022 - June 2022</p>
-                            <p class="item-description">Implemented a reliable data transfer protocol for UDP with
-                                Selective
-                                Repeat
-                                and
-                                pipelining using HTTP and
-                                C/C++.
-                                Successfully transmitted 10MB files split into 524 byte packets and supported multiple
-                                clients.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <h3 class="item-head">Protocol and Server</h3>
-                        <div class="item-body">
-                            <p class="item-subtext">May 2022 - June 2022</p>
-                            <p class="item-description">Implemented a reliable data transfer protocol for UDP with
-                                Selective
-                                Repeat
-                                and
-                                pipelining using HTTP and
-                                C/C++.
-                                Successfully transmitted 10MB files split into 524 byte packets and supported multiple
-                                clients.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <h3 class="item-head">Protocol and Server</h3>
-                        <div class="item-body">
-                            <p class="item-subtext">May 2022 - June 2022</p>
-                            <p class="item-description">Implemented a reliable data transfer protocol for UDP with
-                                Selective
-                                Repeat
-                                and
-                                pipelining using HTTP and
-                                C/C++.
-                                Successfully transmitted 10MB files split into 524 byte packets and supported multiple
-                                clients.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <h3 class="item-head">Protocol and Server</h3>
-                        <div class="item-body">
-                            <p class="item-subtext">May 2022 - June 2022</p>
-                            <p class="item-description">Implemented a reliable data transfer protocol for UDP with
-                                Selective
-                                Repeat
-                                and
-                                pipelining using HTTP and
-                                C/C++.
-                                Successfully transmitted 10MB files split into 524 byte packets and supported multiple
-                                clients.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <h3 class="item-head">SAT solver (3rd place out of 150)</h3>
-                        <div class="item-body">
-                            <p class="item-subtext">May 2022</p>
-                            <p class="item-description">Implemented an informed search algorithm in Lisp that utilizes
-                                forward
-                                checking
-                                and
-                                variable reordering
-                                to
-                                solve
-                                the SAT problem. Finds a valid assignment for any propositional sentence in Conjunctive
-                                Normal
-                                Form.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <h3 class="item-head">Genome Hasher & Assembler</h3>
-                        <div class="item-body">
-                            <p class="item-subtext">April 2021</p>
-                            <p class="item-description">Engineered software that aligns DNA reads to a reference genome
-                                and
-                                locates
-                                SNPs
-                                and
-                                Indels from this
-                                alignment
-                                with an F-score = 85%. Programmed software that solely uses reads to assemble the
-                                reference
-                                genome
-                                bottom-up
-                                with a coverage > 76%.</p>
+                        <div class="item">
+                            <h3 class="item-head">Tools & Frameworks</h3>
+                            <div class="item-body">
+                                <div class="skill-component">
+                                    <div class="item-subtext">
+                                        <h4 class="skill-level">Familiar</h4>
+                                    </div>
+                                    <p class="item-description">
+                                        <span class="CS Web">Flask . </span>
+                                        <span class="CS Web">Jinja . </span>
+                                        <span class="CS GUI">tkinter . </span>
+                                        <span class="CS AI">Matlab . </span>
+                                        <span class="CS Web">Angular JS . </span>
+                                        <span class="CS Web">NodeJS . </span>
+                                        <span class="CS Web">React.js . </span>
+                                        <span class="CS Web">MongoDB . </span>
+                                        <span class="CS AI">PyTorch . </span>
+                                        <span class="CS AI">Tensorflow . </span>
+                                        <span class="CS">Emacs . </span>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="section">
-                <h1 class="section-head" id="awards">Awards</h1>
-                <div class="section-body">
-                    <div class="item">
-                        <h3 class="item-head">Gold Division - USA Computing Olympiad</h3>
+                <div class="section" id="projects">
+                    <h1 class="section-head">Projects</h1>
+                    <div class="section-body">
+                        <div class="item CS Web GUI">
+                            <h3 class="item-head">DodgeBoat
+                                <span>
+                                    <a href="https://github.com/JamesHYoun" class="project-links" target="_blank">
+                                        <i class="fas fa-link"></i>
+                                    </a>
+                                </span>
+                            </h3>
+                            <div class="item-body">
+                                <p class="item-subtext">May 2023 - June 2023</p>
+                                <p class="item-description">Envisioned a game where a player controls a boat to dodge obstacles and get as far as possible. Developed the collision detection algorithm in JavaScript which determines whether the boat has hit an obstacle using the bounding boxes method.</p>
+                            </div>
+                        </div>
+                        <div class="item CS Web GUI">
+                            <h3 class="item-head">Plan-It</h3>
+                            <div class="item-body">
+                                <p class="item-subtext">October 2022 - December 2022</p>
+                                <p class="item-description">Wrote code to authenticate the inputted username and password with the database record using Python Flask and SQLite3. Successfully guarantees that only those with a matching username and password can enter their session.</p>
+                            </div>
+                        </div>
+                        <div class="item CS Web">
+                            <h3 class="item-head">Reliable Data Transfer Protocol</h3>
+                            <div class="item-body">
+                                <p class="item-subtext">May 2022 - June 2022</p>
+                                <p class="item-description">Designed, implemented, and tested a reliable data transfer protocol for UDP with Selective Repeat and pipelining using C/C++ and HTTP. Successfully transmitted 10MB files split into 524 byte packets and supported multiple clients.</p>
+                            </div>
+                        </div>
+                        <div class="item CS AI">
+                            <h3 class="item-head">Boolean Satisfiability Problem Solver (3rd place out of 150)</h3>
+                            <div class="item-body">
+                                <p class="item-subtext">May 2022</p>
+                                <p class="item-description">Theorized and developed an informed search algorithm in Lisp that utilizes forward checking and variable reordering to solve the SAT problem. Efficiently finds a valid assignment for any propositional sentence in Conjunctive Normal Form.</p>
+                            </div>
+                        </div>
+                        <div class="item CS">
+                            <h3 class="item-head">Stock program</h3>
+                            <div class="item-body">
+                                <p class="item-subtext">May 2021</p>
+                                <p class="item-description">Developed a greedy algorithm in Python to output the maximum profit trading strategy given a stock market forecast of multiple businesses.</p>
+                            </div>
+                        </div>
+                        <div class="item CS">
+                            <h3 class="item-head">Genome Hasher & Assembler</h3>
+                            <div class="item-body">
+                                <p class="item-subtext">April 2021</p>
+                                <p class="item-description">Engineered and fine-tuned a program using heuristics that aligns DNA reads to a reference genome and locates SNPs and Indels from this alignment with an F-score = 85% with Python. Wrote additional software that solely uses reads to assemble the reference genome bottom-up with a coverage > 76% using Python.</p>
+                            </div>
+                        </div>
+                        <div class="item CS">
+                            <h3 class="item-head">Genome Aligner</h3>
+                            <div class="item-body">
+                                <p class="item-subtext">April 2021</p>
+                                <p class="item-description">Developed software that can align DNA read sequences to a reference genome with an F-score > 86.5% by storing part of the read and its location in a hashtable.</p>
+                            </div>
+                        </div>
+                        <div class="item CS AI">
+                            <h3 class="item-head">Tents and Trees AI</h3>
+                            <div class="item-body">
+                                <p class="item-subtext">February 2021</p>
+                                <p class="item-description">Created a python AI program capable of basic logical deduction that solves the game given any input.</p>
+                            </div>
+                        </div>
+                        <div class="item CS Web GUI">
+                            <h3 class="item-head">Bruin FitnessPal</h3>
+                            <div class="item-body">
+                                <p class="item-subtext">October 2020 - November 2020</p>
+                                <p class="item-description">Conceptualized and developed a social web app that enables users to plan/record workouts and add friends, using HTML, CSS, Typescript, NodeJS, and Angular.</p>
+                            </div>
+                        </div>
+                        <div class="item CS AI">
+                            <h3 class="item-head">Tic Tac Toe AI</h3>
+                            <div class="item-body">
+                                <p class="item-subtext">February 2020</p>
+                                <p class="item-description">Programmed an AI program in C++ that plans ahead and evaluates its moves based on the minimax algorithm for the Tic Tac Toe game. Plays optimally against all users and never loses a single game.</p>
+                            </div>
+                        </div>
+                        <div class="item CS GUI">
+                            <h3 class="item-head">Kontagion</h3>
+                            <div class="item-body">
+                                <p class="item-subtext">January 2020 - February 2020</p>
+                                <p class="item-description">Coded an arcade-style game where the player controls a jet to destroy flying enemies using C++ and Object-Oriented design to create classes for game state, logic, and characters.</p>
+                            </div>
+                        </div>
+                        <div class="item CS">
+                            <h3 class="item-head">Remote-Controlled Drive Code</h3>
+                            <div class="item-body">
+                                <p class="item-subtext">August 2017 - June 2018</p>
+                                <p class="item-description">Brainstored, developed, tested, and fine-tuned software for a four-wheeled robot that successfully enabled forward, backward, and rotational movements in Java.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="section">
-                <h1 class="section-head" id="certifications">Certifications</h1>
-                <div class="section-body">
-                    <div class="item">
-                        <h3 class="item-head">Machine Learning</h3>
-                        <div class="item-body">
-                            <p class="item-subtext">Stanford</p>
-                            <p class="item-description">linear & logistic regression, SVM, Kernels, Spam classification
-                            </p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <h3 class="item-head">Neural Networks and Deep Learning</h3>
-                        <div class="item-body">
-                            <p class="item-subtext">DeepLearning.AI</p>
-                            <p class="item-description">gradient descent, backpropagation, exploding & vanishing
-                                gradients
-                            </p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <h3 class="item-head">Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and
-                            Optimization</h3>
-                        <div class="item-body">
-                            <p class="item-subtext">DeepLearning.AI</p>
-                            <p class="item-description">Description</p>
+                <div class="section" id="awards">
+                    <h1 class="section-head">Awards</h1>
+                    <div class="section-body">
+                        <div class="item">
+                            <h3 class="item-head">Gold Division - USA Computing Olympiad</h3>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="section">
-                <h1 class="section-head" id="languages">Languages</h1>
-                <div class="section-body">
-                    <div class="item">
-                        <p class="item-description">English</p>
-                        <p class="item-subtext lang-level">Native</p>
+                <div class="section" id="certifications">
+                    <h1 class="section-head">Certifications</h1>
+                    <div class="section-body">
+                        <div class="item AI CS">
+                            <h3 class="item-head">Machine Learning</h3>
+                            <div class="item-body">
+                                <p class="item-subtext">Stanford</p>
+                                <p class="item-description">linear & logistic regression, SVM, Kernels, Spam
+                                    classification
+                                </p>
+                            </div>
+                        </div>
+                        <div class="item AI">
+                            <h3 class="item-head">Neural Networks and Deep Learning</h3>
+                            <div class="item-body">
+                                <p class="item-subtext">DeepLearning.AI</p>
+                                <p class="item-description">gradient descent, backpropagation, exploding & vanishing
+                                    gradients
+                                </p>
+                            </div>
+                        </div>
+                        <div class="item CS">
+                            <h3 class="item-head">Improving Deep Neural Networks: Hyperparameter Tuning, Regularization
+                                and
+                                Optimization</h3>
+                            <div class="item-body">
+                                <p class="item-subtext">DeepLearning.AI</p>
+                                <p class="item-description">Description</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="item">
-                        <p class="item-description">Korean</p>
-                        <p class="item-subtext lang-level">Full</p>
-                    </div>
-                    <div class="item">
-                        <p class="item-description">Spanish</p>
-                        <p class="item-subtext lang-level">Limited</p>
+                </div>
+
+                <div class="section" id="languages">
+                    <h1 class="section-head">Languages</h1>
+                    <div class="section-body">
+                        <div class="item">
+                            <p class="item-description">English</p>
+                            <p class="item-subtext lang-level">Native</p>
+                        </div>
+                        <div class="item">
+                            <p class="item-description">Korean</p>
+                            <p class="item-subtext lang-level">Full</p>
+                        </div>
+                        <div class="item">
+                            <p class="item-description">Spanish</p>
+                            <p class="item-subtext lang-level">Limited</p>
+                        </div>
                     </div>
                 </div>
             </div>
