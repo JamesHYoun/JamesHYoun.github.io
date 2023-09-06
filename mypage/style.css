@@ -11,6 +11,10 @@ body {
     
 }
 
+a {
+    text-decoration: none;
+}
+
 .grid-container {
     display: grid;
     /* grid-template-columns: 1.5fr 6fr 1fr; */
@@ -233,9 +237,51 @@ nav a:hover {
 }
 
 .project-links {
-    color: rgb(37, 37, 37);
-    float: right;
+    margin-left: 5px;
+    color: rgba(1, 126, 235, 0.7);
+    /* color: rgb(37, 37, 37); */
+    /* float: right; */
 }
+
+/* a.project-links {
+    margin-left: 5px;
+}
+
+button.project-links {
+    margin-left: 5px;
+} */
+
+.project-links:hover {
+    color: rgba(1, 126, 235, 1);
+}
+
+/* .demo-links i {
+    color: rgb(37, 37, 37);
+} */
+
+.demo-button {
+    background: none;
+    border: none;
+}
+
+.demo-button i {
+    font-size: 30px;
+}
+
+.demo-container {
+    display: none;
+    margin-top: 10px;
+    width: 50%;
+    height: auto;
+
+    /* width: 10%;
+    height: auto; */
+}
+
+/* video.demo-container {
+    width: 50%;
+    height: auto;
+} */
 
 .item-body {
     padding-top: 4px;

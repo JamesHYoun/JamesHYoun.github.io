@@ -68,7 +68,14 @@ function updateVisibility() {
     if (visibility['All']) {
         let contentElements = document.getElementById('content').querySelectorAll('*');
         contentElements.forEach(element => {
-            element.style.display = 'block';
+            if (element.tagName !== "VIDEO") {
+                if (element.tagName === 'SPAN' || element.parentElement.tagName === 'SPAN' || element.parentElement.parentElement.tagName === 'SPAN') {
+                    element.style.display = 'inline';
+                }
+                else {
+                    element.style.display = 'block';
+                }
+            }
         });
         for (let item of items) {
             if (item.tagName === 'SPAN') {
@@ -195,4 +202,42 @@ function updateButtonStyle() {
     //         targetElement.style.backgroundColor = 'rgb(37, 37, 37)';
     //     }
     // }
+}
+
+
+
+
+// const popupLinks = document.querySelectorAll('.popup-links');
+// let popup = document.getElementById('popup-container');
+// console.log(popup);
+// let video = document.querySelector('#popup-container video');
+// for (const link of popupLinks) {
+//     link.addEventListener('click', (event) => {
+//         event.preventDefault();
+//         console.log(link.getAttribute('href'));
+//         video.src = link.getAttribute('href');
+//         video.load();
+//         popup.style.display = "block";
+//     })
+// }
+
+// const closePopup = document.getElementById('close-popup');
+// closePopup.addEventListener('click', () => {
+//     video.pause();
+//     video.currentTime = 0;
+//     video.src = '';
+//     popup.style.display = "none";
+// })
+
+function toggleDemo(arg) {
+    console.log("entered");
+    let demo = document.getElementById(arg);
+    console.log(demo);
+    if (window.getComputedStyle(demo).display !== "none") {
+        demo.pause();
+        demo.style.display = "none";
+    }
+    else {
+        demo.style.display = "block";
+    }
 }
