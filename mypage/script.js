@@ -1,4 +1,18 @@
-let visibility = {
+let allElements = Object.values(document.querySelectorAll('*'));
+let exceptions = new Set(Object.values(document.querySelectorAll('#projects .item video')));
+const defaultDisplays = new Map();
+for (let element of allElements) {
+    defaultDisplays.set(element, window.getComputedStyle(element).display);
+}
+let filterElements = Object.values(document.querySelectorAll('.CS, .AI, .Web, .GUI, .NA'));
+let count = new Map();
+for (let element of filterElements) {
+    count.set(element, 0);
+}
+let sections = Object.values(document.querySelectorAll('.section'));
+let buttons = Object.values(document.querySelectorAll('button'));
+
+let isPressed = {
     'All': true,
     'CS': true,
     'AI': true,
@@ -6,35 +20,32 @@ let visibility = {
     'GUI': true,
 };
 
-// let items = Object.values(document.querySelectorAll('.AI, .CS, #certifications .item, #languages .item'));
-let items = Object.values(document.querySelectorAll('.CS, .AI, .Web, .GUI, .item, #education .item span, #skills .item span'));
-let sections = Object.values(document.querySelectorAll('.section'));
-
-let count = new Map();
-
 toggleAll(true);
+updateDisplay();
 
 function toggleButton(arg) {
     if (arg === 'All') {
         toggleAll(true);
     }
     else {
-        if (visibility['All']) {
+        if (isPressed['All']) {
             toggleAll(false);
         }
-        visibility[arg] = !visibility[arg];
-        const argItems = Object.values(document.querySelectorAll('.' + arg));
-        for (let item of argItems) {
-            if (visibility[arg]) {
-                count.set(item, count.get(item) + 1);
+        isPressed[arg] = !isPressed[arg];
+        var argElements = Array.from(filterElements).filter(function(element) {
+            return element.classList.contains(arg);
+        });
+        for (let element of argElements) {
+            if (isPressed[arg]) {
+                count.set(element, count.get(element) + 1);
             }
             else {
-                count.set(item, count.get(item) - 1);
+                count.set(element, count.get(element) - 1);
             }
         }
-        if (!visibility[arg]) {
+        if (!isPressed[arg]) {
             flag = true;
-            for (const value of Object.values(visibility)) {
+            for (const value of Object.values(isPressed)) {
                 if (value === true) {
                     flag = false;
                     break;
@@ -45,96 +56,101 @@ function toggleButton(arg) {
             }
         }
     }
-    updateVisibility();
+    updateDisplay();
 }
 
 function toggleAll(val) {
-    visibility['All'] = val;
-    for (key in visibility) {
-        visibility[key] = val;
+    isPressed['All'] = val;
+    for (key in isPressed) {
+        isPressed[key] = val;
     }
-    for (let item of items) {
+    for (let element of filterElements) {
         if (val) {
-            let classes = Object.values(item.classList).filter(value => Object.keys(visibility).includes(value));
-            count.set(item, classes.length);
+            let classes = Object.values(element.classList).filter(value => Object.keys(isPressed).includes(value));
+            count.set(element, classes.length);
         }
         else {
-            count.set(item, 0);
+            count.set(element, 0);
         }
     }
 }
 
-function updateVisibility() {
-    if (visibility['All']) {
-        let contentElements = document.getElementById('content').querySelectorAll('*');
-        contentElements.forEach(element => {
-            if (element.tagName !== "VIDEO") {
-                if (element.tagName === 'SPAN' || element.parentElement.tagName === 'SPAN' || element.parentElement.parentElement.tagName === 'SPAN') {
-                    element.style.display = 'inline';
-                }
-                else {
-                    element.style.display = 'block';
-                }
-            }
-        });
-        for (let item of items) {
-            if (item.tagName === 'SPAN') {
-                item.style.display = 'inline';
-            }
-            else {
-                item.style.display = 'block';
-            }
-        }
-    }
-    else {
-        // let felements = Object.values(document.querySelectorAll('.' + arg));
-        for (let item of items) {
-            if (count.get(item) > 0) {
-                if (item.tagName === 'SPAN') {
-                    item.style.display = 'inline';
-                }
-                else {
-                    item.style.display = 'block';
-                }
-            }
-            else {
-                item.style.display = 'none';
-            }
-        }
-    }
-    updateEducationVisibility();
-    updateSkillsVisibility();
-    for (let section of sections) {
-        let sectionItems = Object.values(document.querySelectorAll('#' + section.id + ' .item'));
-        flag = true;
-        let navElement = document.querySelector("a[href='#" + section.id + "']");
-        for (let item of sectionItems) {
-            if (item.style.display !== 'none') {
-                flag = false;
-                section.style.display = 'block';
-                navElement.style.display = 'block';
-                navElement.parentElement.style.listStyleType = 'disc';
-                break;
-            }
-        }
-        if (flag) {
-            section.style.display = 'none';
-            navElement.style.display = 'none';
-            navElement.parentElement.style.listStyleType = 'none';
-        }
-    }
+function updateDisplay() {
     updateButtonStyle();
+    for (let element of allElements) {
+        if (!exceptions.has(element)) {
+            element.style.display = defaultDisplays.get(element);
+        }
+    }
+    if (!isPressed['All']) {
+        for (let element of filterElements) {
+            if (count.get(element) === 0) {
+                element.style.display = 'none';
+            }
+        }
+        updateEducationDisplay();
+        updateSkillsDisplay();
+        updateProjectsDisplay();
+        updateAwardsDisplay();
+        updateCertificationsDisplay();
+        updateLanguagesDisplay();
+        updateNavigationDisplay();
+    }
 }
 
-function updateEducationVisibility() {
+function updateButtonStyle() {
+    for (let key in isPressed) {
+        let val = isPressed[key];
+        var button = Array.from(buttons).filter(function(element) {
+            return element.id === key + '-button';
+        })[0];
+        if (key === 'All') {
+            if (val) {
+                button.style.backgroundColor = 'rgb(30, 30, 30)';
+            }
+            else {
+                button.style.backgroundColor = 'rgb(37, 37, 37)';
+            }
+        }
+        else {
+            if (val && !isPressed['All']) {
+                button.style.backgroundColor = 'rgb(30, 30, 30)';
+            }
+            else {
+                button.style.backgroundColor = 'rgb(37, 37, 37)';
+            }
+        }
+    }
+}
+
+function updateDisplayGeneric(sectionID) {
+    let sectionFlag = true;
+    let items = Object.values(document.querySelectorAll('#' + sectionID + ' .item'));
+    for (let i = 0; i < items.length; i++) {
+        let item = items[i];
+        if (item.style.display !== 'none') {
+            sectionFlag = false;
+            break;
+        }
+    }
+    if (sectionFlag) {
+        Array.from(sections).filter(function(element) {
+            return element.id === sectionID;
+        })[0].style.display = 'none';
+    }
+}
+
+function updateEducationDisplay() {
+    let sectionFlag = true;
     let eduItems = Object.values(document.querySelectorAll('#education .item'));
-    for (let i = 1; i < eduItems.length - 1; i++) {
-        let courses = Object.values(document.querySelectorAll('#education .item:nth-child(' + (i + 1) + ') span'));
+    for (let i = 0; i < eduItems.length; i++) {
+        let courses = Object.values(eduItems[i].querySelectorAll('span'));
         let flag = true;
         for (let j = 0; j < courses.length; j++) {
             if (courses[j].style.display !== 'none') {
+                sectionFlag = false;
                 flag = false;
-                eduItems[i].style.display = 'block';
+                eduItems[i].style.display = defaultDisplays.get(eduItems[i]);
                 break;
             }
         }
@@ -142,22 +158,29 @@ function updateEducationVisibility() {
             eduItems[i].style.display = 'none';
         }
     }
+    if (sectionFlag) {
+        Array.from(sections).filter(function(element) {
+            return element.id === 'education';
+        })[0].style.display = 'none';
+    }
 }
 
-function updateSkillsVisibility() {
+function updateSkillsDisplay() {
+    let sectionFlag = true;
     let skillItems = Object.values(document.querySelectorAll('#skills .item'));
     for (let i = 0; i < skillItems.length; i++) {
-        let skillComponents = Object.values(document.querySelectorAll('#skills .item:nth-child(' + (i + 1) + ') .skill-component'));
+        let skillComponents = Object.values(skillItems[i].querySelectorAll('.skill-component'));
         let flag0 = true;
         for (let j = 0; j < skillComponents.length; j++) {
-            let units = Object.values(document.querySelectorAll('#skills .item:nth-child(' + (i + 1) + ') .skill-component:nth-child(' + (j + 1) + ') span'));
+            let units = Object.values(skillComponents[j].querySelectorAll('span'));
             let flag1 = true;
             for (let unit of units) {
                 if (unit.style.display !== 'none') {
                     flag1 = false;
                     flag0 = false;
-                    skillComponents[j].style.display = 'block';
-                    skillItems[i].style.display = 'block';
+                    sectionFlag = false;
+                    skillComponents[j].style.display = defaultDisplays.get(skillComponents[j]);
+                    skillItems[i].style.display = defaultDisplays.get(skillItems[i]);
                     break;
                 }
             }
@@ -169,65 +192,40 @@ function updateSkillsVisibility() {
             skillItems[i].style.display = 'none';
         }
     }
+    if (sectionFlag) {
+        Array.from(sections).filter(function(element) {
+            return element.id === 'skills';
+        })[0].style.display = 'none';
+    }
 }
 
-function updateButtonStyle() {
-    for (let key in visibility) {
-        let val = visibility[key];
-        let button = document.getElementById(key + "-button");
-        if (key === 'All') {
-            if (val) {
-                button.style.backgroundColor = 'rgb(30, 30, 30)';
-            }
-            else {
-                button.style.backgroundColor = 'rgb(37, 37, 37)';
-            }
+function updateProjectsDisplay() {
+    updateDisplayGeneric('projects');
+}
+
+function updateAwardsDisplay() {
+    updateDisplayGeneric('awards');
+}
+
+function updateCertificationsDisplay() {
+    updateDisplayGeneric('certifications');
+}
+
+function updateLanguagesDisplay() {
+    updateDisplayGeneric('languages');
+}
+
+function updateNavigationDisplay() {
+    for (let section of sections) {
+        let navElement = document.querySelector("a[href='#" + section.id + "']").parentElement;
+        if (section.style.display !== 'none') {
+            navElement.style.display = defaultDisplays.get(navElement);
         }
         else {
-            if (val && !visibility['All']) {
-                button.style.backgroundColor = 'rgb(30, 30, 30)';
-            }
-            else {
-                button.style.backgroundColor = 'rgb(37, 37, 37)';
-            }
+            navElement.style.display = 'none';
         }
     }
-    // let buttons = document.querySelectorAll('button');
-    // for (let button of buttons) {
-    //     if (button.id === 'All-button')
-    //     if (button.id in visibility) {
-    //         targetElement.style.backgroundColor = 'rgb(50, 50, 50)';
-    //     }
-    //     else {
-    //         targetElement.style.backgroundColor = 'rgb(37, 37, 37)';
-    //     }
-    // }
 }
-
-
-
-
-// const popupLinks = document.querySelectorAll('.popup-links');
-// let popup = document.getElementById('popup-container');
-// console.log(popup);
-// let video = document.querySelector('#popup-container video');
-// for (const link of popupLinks) {
-//     link.addEventListener('click', (event) => {
-//         event.preventDefault();
-//         console.log(link.getAttribute('href'));
-//         video.src = link.getAttribute('href');
-//         video.load();
-//         popup.style.display = "block";
-//     })
-// }
-
-// const closePopup = document.getElementById('close-popup');
-// closePopup.addEventListener('click', () => {
-//     video.pause();
-//     video.currentTime = 0;
-//     video.src = '';
-//     popup.style.display = "none";
-// })
 
 function toggleDemo(arg) {
     console.log("entered");

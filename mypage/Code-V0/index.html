@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="script.js" defer></script>
 </head>
+<!-- 
+<script>
+    const elements = document.querySelectorAll('.AI');
+    console.log(elements);
+</script> -->
 
 <body>
     <div class="grid-container">
@@ -15,13 +20,17 @@
                 <div id="filter-menu">
                     <h3>Filter Menu <span><button id="All-button" onclick="toggleButton('All')">All</button></span></h3>
                     <div id="filters">
+                        <!-- <input type="button" id="CS-button" value="CS" onclick="toggleButton('CS')">
+                        <input type="button" id="AI-button" value="AI" onclick="toggleButton('AI')">
+                        <input type="button" id="Web-button" value="Web" onclick="toggleButton('Web')">
+                        <input type="button" id="GUI-button" value="GUI" onclick="toggleButton('GUI')"> -->
                         <button id="CS-button" onclick="toggleButton('CS')">CS</button>
                         <button id="AI-button" onclick="toggleButton('AI')">AI</button>
                         <button id="Web-button" onclick="toggleButton('Web')">Web</button>
                         <button id="GUI-button" onclick="toggleButton('GUI')">GUI</button>
                     </div>
                 </div>
-                <nav id="toc">
+                <nav>
                     <h3>Table of Contents</h3>
                     <ul>
                         <li><a href="#bio">BIO</a></li>
@@ -41,6 +50,14 @@
                 <img id="photo" src="images/James_Linkedin.JPG">
                 <h1 id="name">James Youn</h1>
                 <div id="personal-info">
+                    <!-- <span>
+                    <div class="location-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="#FF5733"
+                                d="M12 2C7.264 2 4 5.524 4 10c0 2.552.978 5.053 2.732 7.049a2.52 2.52 0 0 0 1.819.834c.732 0 1.447-.293 1.973-.82L12 19.833l1.476-1.927a2.518 2.518 0 0 0 1.973.82 2.52 2.52 0 0 0 1.819-.834C19.022 15.053 20 12.552 20 10c0-4.476-3.264-8-8-8zm0 12a2 2 0 1 1 0-4 2 2 0 0 1 0 4z" />
+                        </svg>
+                    </div>
+                    </span> -->
                     <strong id="location">Cupertino, CA</strong>
 
                     <strong id="email">james.hc.youn@gmail.com</strong>
@@ -59,6 +76,7 @@
                     complex intelligence and hope to one day do Research & Development in an AI field. As a very
                     hardworking and open-minded individual, I am eager to learn and grow from every experience and
                     constructive feedback I can get.</p>
+                <!-- <p id="description" class="item-description">DAM</p> -->
             </div>
             <div id="content">
                 <div class="section" id="education">
@@ -75,7 +93,7 @@
                         <div class="item">
                             <h3 class="item-head">Computer Science Major</h3>
                             <div class="item-body">
-                                <p class="item-description courses">
+                                <p class="item-description">
                                     <span class="CS">Logic Design & Digital Systems . </span>
                                     <span class="CS">Algorithms & Complexity . </span>
                                     <span class="CS">Computer Organization . </span>
@@ -106,25 +124,25 @@
                         <div class="item">
                             <h3 class="item-head">Mathematics Minor</h3>
                             <div class="item-body">
-                                <p class="item-description courses">
+                                <p class="item-description">
                                     <span class="CS AI">Linear Algebra . </span>
                                     <span class="CS">Discrete Structures . </span>
-                                    <span class="NA">Differential Equations . </span>
-                                    <span class="NA">Real Analysis . </span>
+                                    <span>Differential Equations . </span>
+                                    <span>Real Analysis . </span>
                                     <span class="AI">Probability Theory . </span>
                                     <span class="CS">Applied Numerical Methods . </span>
                                     <span class="AI">Optimization . </span>
-                                    <span class="NA">Abstract Algebra . </span>
+                                    <span>Abstract Algebra . </span>
                                 </p>
                             </div>
                         </div>
                         <div class="item">
                             <h3 class="item-head">Bioinformatics Minor</h3>
                             <div class="item-body">
-                                <p class="item-description courses">
-                                    <span class="NA">Intro to Bioinformatics . </span>
+                                <p class="item-description">
+                                    <span>Intro to Bioinformatics . </span>
                                     <span class="AI">Applied Neuroscience . </span>
-                                    <span class="NA">Cell & Molecular Biology . </span>
+                                    <span>Cell & Molecular Biology . </span>
                                     <span class="CS">Computational & Systems Biology . </span>
                                     <span class="CS">Algorithms in Bioinformatics . </span>
                                     <span class="CS AI">Machine Learning in Genetics . </span>
@@ -152,7 +170,7 @@
                                     <div class="item-subtext">
                                         <h4 class="skill-level">Proficient</h4>
                                     </div>
-                                    <p class="item-description skill-unit">
+                                    <p class="item-description">
                                         <span class="CS AI">Python . </span>
                                         <span class="CS">C/C++ . </span>
                                         <span class="CS">Java . </span>
@@ -162,7 +180,7 @@
                                     <div class="item-subtext">
                                         <h4 class="skill-level">Familiar</h4>
                                     </div>
-                                    <p class="item-description skill-unit">
+                                    <p class="item-description">
                                         <span class="CS Web">HTML . </span>
                                         <span class="CS Web">Javascript/Typescript . </span>
                                         <span class="CS Web">CSS . </span>
@@ -180,7 +198,7 @@
                                     <div class="item-subtext">
                                         <h4 class="skill-level">Familiar</h4>
                                     </div>
-                                    <p class="item-description skill-unit">
+                                    <p class="item-description">
                                         <span class="CS Web">Flask . </span>
                                         <span class="CS Web">Jinja . </span>
                                         <span class="CS GUI">tkinter . </span>
@@ -205,8 +223,7 @@
                         <div class="item CS Web GUI">
                             <h3 class="item-head">DodgeBoat
                                 <span>
-                                    <button class="project-links demo-links demo-button"
-                                        onclick="toggleDemo('DodgeBoat-demo')">
+                                    <button class="project-links demo-links demo-button" onclick="toggleDemo('DodgeBoat-demo')">
                                         <i class="fas fa-play"></i>
                                     </button>
                                 </span>
@@ -219,6 +236,7 @@
                                     boxes method.</p>
                                 <video controls class="demo-container" id="DodgeBoat-demo"
                                     src="demos/DodgeBoat.mp4"></video>
+                                <!-- <span class="close-popup">&times;</span> -->
                             </div>
                         </div>
                         <div class="item CS Web GUI">
@@ -262,8 +280,7 @@
                         <div class="item CS">
                             <h3 class="item-head">Genome Hasher & Assembler
                                 <span>
-                                    <a href="https://github.com/JamesHYoun/DNA-Analysis-Software" class="project-links"
-                                        target="_blank">
+                                    <a href="https://github.com/JamesHYoun/DNA-Analysis-Software" class="project-links" target="_blank">
                                         <i class="fas fa-link"></i>
                                     </a>
                                 </span>
@@ -289,8 +306,7 @@
                         <div class="item CS AI">
                             <h3 class="item-head">Tents and Trees AI
                                 <span>
-                                    <a href="https://github.com/JamesHYoun/Tents-and-Trees" class="project-links"
-                                        target="_blank">
+                                    <a href="https://github.com/JamesHYoun/Tents-and-Trees" class="project-links" target="_blank">
                                         <i class="fas fa-link"></i>
                                     </a>
                                 </span>
@@ -313,8 +329,7 @@
                         <div class="item CS AI">
                             <h3 class="item-head">Tic Tac Toe AI
                                 <span>
-                                    <a href="https://github.com/JamesHYoun/Tic-Tac-Toe" class="project-links"
-                                        target="_blank">
+                                    <a href="https://github.com/JamesHYoun/Tic-Tac-Toe" class="project-links" target="_blank">
                                         <i class="fas fa-link"></i>
                                     </a>
                                 </span>
@@ -350,7 +365,7 @@
                 <div class="section" id="awards">
                     <h1 class="section-head">Awards</h1>
                     <div class="section-body">
-                        <div class="item CS">
+                        <div class="item">
                             <h3 class="item-head">Gold Division - USA Computing Olympiad</h3>
                         </div>
                     </div>
@@ -392,15 +407,15 @@
                 <div class="section" id="languages">
                     <h1 class="section-head">Languages</h1>
                     <div class="section-body">
-                        <div class="item NA">
+                        <div class="item">
                             <p class="item-description">English</p>
                             <p class="item-subtext lang-level">Native</p>
                         </div>
-                        <div class="item NA">
+                        <div class="item">
                             <p class="item-description">Korean</p>
                             <p class="item-subtext lang-level">Full</p>
                         </div>
-                        <div class="item NA">
+                        <div class="item">
                             <p class="item-description">Spanish</p>
                             <p class="item-subtext lang-level">Limited</p>
                         </div>
